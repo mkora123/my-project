@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div style="width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;" class="container">
+        <h2 style="text-align: center;
+            margin-bottom: 20px;">Login</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label style="font-size: 16px;
+            display: block;
+            margin-bottom: 5px;" for="username">Username</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;" type="text" id="username" name="username" required>
+
+            <label style="font-size: 16px;
+            display: block;
+            margin-bottom: 5px;" for="password">Password</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;" type="password" id="password" name="password" required>
+
+            <input style="width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;" type="submit" value="Login">
+        </form>
+
+        <div style="text-align: center;
+            margin-top: 15px;" class="redirect-link">
+            <p>Don't have an account? <a style="color: #007bff;
+            text-decoration: none;" href="{% url 'register' %}">Register here</a></p>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <h3>Register Form</h3>
+
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary col-md-12">SUBMIT</button>
+    </form>
+        <div class="redirect-link">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+
+
+
+
+
+{% endblock %}

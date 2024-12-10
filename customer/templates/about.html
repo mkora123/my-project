@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Customers List</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th>PHOTO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>GENDER</th>
+        <th>AGE</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for customer in data %}
+        <tr>
+           <td>
+               {% if customer.image %}
+               <img src="{{ customer.image.url }}" alt="{{ customer.name }}" style="width: 80px; height: 80px; object-fit: cover">
+               {% else %}
+               <img src="{% static 'images/placeholder.jpg' %}" alt="No Image" style="width: 80px; height: 80px; object-fit: cover">
+               {% endif %}
+           </td> 
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.gender }}</td>
+            <td>{{ customer.age }}</td>
+            
+        </tr>
+    
+    {% endfor %}
+    </tbody>
+    
+    
+</table>
+
+{% endblock %}

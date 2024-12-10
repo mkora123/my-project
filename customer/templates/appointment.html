@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+    <div style="max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;" class="container-fluid">
+        <h2 style="text-align: center;color: #333;">Book Your Appointment</h2>
+        <form  method="POST">
+            {% csrf_token %}
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;"  for="name">Full Name</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" type="text" id="name" name="name" required placeholder="Your Name">
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;" for="email">Email Address</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" type="email" id="email" name="email" required placeholder="Your Email">
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;" for="phone">Phone Number</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" type="tel" id="phone" name="phone" required placeholder="Your Phone Number">
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;" for="appointment-date">Select Date</label>
+            <input style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" type="date" id="appointment-date" name="appointment_date" required>
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;" for="appointment-time">Select Time</label>
+            <select style="" id="appointment-time" name="appointment_time" required>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="09:00">09:00 AM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="10:00">10:00 AM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="11:00">11:00 AM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="12:00">12:00 PM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="01:00">01:00 PM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="02:00">02:00 PM</option>
+                <option style=" width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" value="03:00">03:00 PM</option>
+            </select>
+
+            <label style="font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;" for="notes">Additional Notes</label>
+            <textarea style="width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;" id="notes" name="notes" rows="4" placeholder="Any special requests or notes"></textarea>
+
+            <button style="width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;" type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+
+{% endblock %}
